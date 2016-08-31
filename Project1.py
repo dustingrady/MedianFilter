@@ -30,8 +30,8 @@ def getMedian(pixelContainer):
         
 processImage(img)#Call our function to run
 
-finalImage = Image.new(img.mode, img.size)
-finalImage.putdata(pixelContainer)
-finalImage.show()
+#finalImage = Image.new(img.mode, img.size)
+#finalImage.putdata(pixelContainer)
+#finalImage.show()
 
 
