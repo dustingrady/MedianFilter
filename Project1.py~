@@ -1,5 +1,6 @@
 #Project 1
 #Author: Dustin Grady
+#Github: https://github.com/G-I-S-H/CS205_Project1
 #Purpose: To create a filter which will remove undesirable pixels by finding the median value through multiple images
 #Status: Finished/ Tested
 

@@ -15,7 +15,7 @@ inputValue = int(input('Enter # of photos: '))
 #Get each image and add it to our list
 for i in range(1, (inputValue + 1)):
     img = Image.open('C:/Users/Gish-Laptop/Documents/CS205_Project1/Project 1 Images/' + str(i) +'.png')
-    imageContainer.append(img)
+    imageContainer.append(img.convert('RGB'))#Convert to RGB to eliminate Alpha layer (if applicable)
 
 #Create a 2D list of lists array to hold pixel values
 for i in range(0, inputValue):
