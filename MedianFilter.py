@@ -1,11 +1,12 @@
-#Project 1
-#Author: Dustin Grady
-#Github: https://github.com/G-I-S-H/CS205_Project1
-#Purpose: To create a filter which will remove undesirable pixels by finding the median value through multiple images
-#Status: Finished/ Tested
+# Project 1
+# Author: Dustin Grady
+# Github: https://github.com/dustingrady/MedianFilter
+# Purpose: To create a filter which will remove undesirable pixels by finding the median value through multiple images
+# Status: Finished/ Tested
 
 from PIL import Image
 import statistics
+import os
 
 imageContainer = []
 pixels = []
@@ -13,8 +14,9 @@ finalImageElements = []#List to hold pixels that will compose our final image
 inputValue = int(input('Enter # of photos: '))
 
 #Get each image and add it to our list
+dir_path = os.path.dirname(os.path.realpath(__file__))
 for i in range(1, (inputValue + 1)):
-    img = Image.open('C:/Users/Gish-Laptop/Documents/CS205_Project1/Project 1 Images/' + str(i) +'.png')
+    img = Image.open(dir_path + '/Images/' + str(i) +'.png')
     imageContainer.append(img.convert('RGB'))#Convert to RGB to eliminate Alpha layer (if applicable)
 
 #Create a 2D list of lists array to hold pixel values
@@ -26,8 +28,8 @@ def processImage(img, inputValue):
 
     #Put all pixels values into our 2D list of lists
     for z in range (0, inputValue):#Loops as many times as there are images
-        for x in range (0, xSize):#Get pixels on x axis
-            for y in range (0, ySize):#Get pixels on y axis
+        for x in range(0, xSize):#Get pixels on x axis
+            for y in range(0, ySize):#Get pixels on y axis
                 r, g, b = imageContainer[z].getpixel((x,y))#Break pixel into its R,G,B elements
                 pixels[z].append((r,g,b))#Append those values as tuple to pixels container
 
